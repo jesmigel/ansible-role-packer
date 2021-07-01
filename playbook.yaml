@@ -1,5 +1,16 @@
 ---
 - hosts: localhost
+  vars:
+    vcenter:
+      server: 'sample.data'
+      username: 'sample.data'
+      password: 'sample.data'
+      datacenter: 'sample.data'
+      datastore: 'sample.data'
+      host: 'sample.data'
+      folder: 'sample.data'
+      network: 'sample.data'
+      network_card: 'sample.data'
   vars_files:
   - ./defaults/main.yaml
   - ./vars/main.yaml
