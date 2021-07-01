@@ -36,4 +36,4 @@ jobs:
         run: make lint
             
       - name: Run playbook
-        run: ansible-playbook -i inventories/github -t packer_prerequisites -u $USER playbook.yaml
+        run: ansible-playbook -i inventories/github.yaml -t packer_prerequisites -u $USER playbook.yaml
