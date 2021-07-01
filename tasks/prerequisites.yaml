@@ -31,7 +31,6 @@
     src: "{{ item.name }}/provisioner.sh"
     dest: "/home/{{ ansible_user }}/{{ item.name }}/scripts/provisioner.sh"
     owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
     mode: '755'
   loop: "{{ packer_builds }}"
   tags:
@@ -44,7 +43,6 @@
     src: "vcenter.pkr.hcl.jinja2"
     dest: "/home/{{ ansible_user }}/{{ item.name }}/vcenter.pkr.hcl"
     owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
     mode: '755'
   loop: "{{ packer_builds }}"
   tags:
@@ -57,7 +55,6 @@
     src: "variables.pkr.hcl.jinja2"
     dest: "/home/{{ ansible_user }}/{{ item.name }}/variables.pkr.hcl"
     owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
     mode: '755'
   loop: "{{ packer_builds }}"
   tags:
@@ -70,7 +67,6 @@
     src: "{{ item.name }}/user-data"
     dest: "/home/{{ ansible_user }}/{{ item.name }}/http/user-data"
     owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
     mode: '755'
   loop: "{{ packer_builds }}"
   tags:
@@ -83,7 +79,6 @@
     src: "build.pkr.hcl.jinja2"
     dest: "/home/{{ ansible_user }}/{{ item.name }}/build.pkr.hcl"
     owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
     mode: '655'
   loop: "{{ packer_builds }}"
   tags:
