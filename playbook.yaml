@@ -8,3 +8,4 @@
   tasks:
   - name: Test role as a playbook
     import_tasks: tasks/main.yaml
+    delegate_to: localhost
