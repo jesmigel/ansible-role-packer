@@ -5,3 +5,14 @@ build_paths:
 
 http_files:
   - meta-data
+
+vcenter:
+  server: ''
+  username: ''
+  password: ''
+  datacenter: ''
+  datastore: ''
+  host: ''
+  folder: ''
+  network: ''
+  network_card: ''
