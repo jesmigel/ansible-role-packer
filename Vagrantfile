@@ -155,7 +155,7 @@ Vagrant.configure('2') do |config|
       ansible.extra_vars           = payload['ansible']['extra_vars']
       ansible.playbook             = "./playbook.yaml"
       ansible.limit                = "all"
-      ansible.tags                 = ['fetch']
+      ansible.tags                 = ['all']
     end
   end
   

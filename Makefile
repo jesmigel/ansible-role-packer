@@ -13,7 +13,7 @@ down:
 	$(call venv_exec,.venv,$(_VM) suspend)
 
 lint:
-	$(call venv_exec,.venv,ansible-lint .)
+	$(call venv_exec,.venv,ansible-lint --project-dir=.)
 
 login:
 	$(call venv_exec,.venv,$(_VM) ssh)

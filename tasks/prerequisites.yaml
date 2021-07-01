@@ -6,8 +6,8 @@
     state: directory
     owner: "{{ ansible_user }}"
     group: "{{ ansible_user }}"
-    mode: '0775'
-    recurse: yes
+    mode: '0655'
+    recurse: true
   with_nested:
   - "{{ packer_builds }}"
   - "{{ build_paths }}"
@@ -19,6 +19,7 @@
 - name: Create empty meta-data file
   file:
     path: "/home/{{ ansible_user }}/{{ item.name }}/http/meta-data"
+    mode: '0655'
     state: touch
   loop: "{{ packer_builds }}"
   tags:
@@ -84,7 +85,7 @@
     dest: "/home/{{ ansible_user }}/{{ item.name }}/build.pkr.hcl"
     owner: "{{ ansible_user }}"
     group: "{{ ansible_user }}"
-    mode: '755'
+    mode: '655'
   loop: "{{ packer_builds }}"
   tags:
   - packer_prerequisites
@@ -92,7 +93,8 @@
 
 # Packer validate files
 - name: Validate builds
-  shell:
+  ansible.builtin.command:
+  args:
     cmd: "packer validate -var-file vcenter.pkr.hcl -var-file variables.pkr.hcl build.pkr.hcl"
     chdir: "/home/{{ ansible_user }}/{{ item.name }}"
   loop: "{{ packer_builds }}"

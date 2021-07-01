@@ -4,10 +4,8 @@
   - ./defaults/main.yaml
   - ./vars/main.yaml
   roles:
-  - { role: hashicorp, become: yes, tags: hashicorp }
+  - {role: hashicorp, become: true, tags: hashicorp}
   tasks:
   - name: Test role as a playbook
     import_tasks: tasks/main.yaml
     become: true
-  handlers:
-  - include: handlers/main.yaml
