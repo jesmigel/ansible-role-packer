@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: localhost
   vars_files:
   - ./defaults/main.yaml
   - ./vars/main.yaml
@@ -8,4 +8,3 @@
   tasks:
   - name: Test role as a playbook
     import_tasks: tasks/main.yaml
-    delegate_to: localhost
