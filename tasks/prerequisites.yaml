@@ -5,7 +5,6 @@
     path: "/home/{{ ansible_user }}/{{ item.0.name }}/{{ item.1 }}"
     state: directory
     owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
     mode: '0655'
     recurse: true
   with_nested:
