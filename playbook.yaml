@@ -1,10 +1,21 @@
 ---
-- hosts: all
+- hosts: localhost
+  vars:
+    vcenter:
+      server: 'sample.data'
+      username: 'sample.data'
+      password: 'sample.data'
+      datacenter: 'sample.data'
+      datastore: 'sample.data'
+      host: 'sample.data'
+      folder: 'sample.data'
+      network: 'sample.data'
+      network_card: 'sample.data'
   vars_files:
-    - ./defaults/main.yaml
-    - ./vars/main.yaml
+  - ./defaults/main.yaml
+  - ./vars/main.yaml
   roles:
-    - {role: hashicorp, become: true, tags: hashicorp}
+  - {role: hashicorp, become: true, tags: hashicorp}
   tasks:
-    - name: Test role as a playbook
-      import_tasks: tasks/main.yaml
+  - name: Test role as a playbook
+    import_tasks: tasks/main.yaml

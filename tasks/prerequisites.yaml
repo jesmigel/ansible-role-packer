@@ -85,10 +85,6 @@
   - packer_prerequisites
   - packer_payload_build
 
-  - ansible.builtin.debug:
-    var: vcenter
-    verbosity: 2
-
 # Packer validate files
 - name: Validate builds
   ansible.builtin.command:
