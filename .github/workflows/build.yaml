@@ -34,9 +34,6 @@ jobs:
       
       - name: Execute ansible-lint
         run: make lint
-      
-      - name: Printenv
-        run: printenv
-      
+            
       - name: Run playbook
         run: ansible-playbook -i inventories/github -t packer_prerequisites -u $USER playbook.yaml
