@@ -1,14 +1,14 @@
 hosts:
   localhost:
-   vars:
-    ansible_connection: local
-    vcenter:
-      server: 'sample.input'
-      username: 'sample.input'
-      password: 'sample.input'
-      datacenter: 'sample.input'
-      datastore: 'sample.input'
-      host: 'sample.input'
-      folder: 'sample.input'
-      network: 'sample.input'
-      network_card: 'sample.input'
+    vars:
+     ansible_connection: local
+     vcenter:
+       server: 'sample.input'
+       username: 'sample.input'
+       password: 'sample.input'
+       datacenter: 'sample.input'
+       datastore: 'sample.input'
+       host: 'sample.input'
+       folder: 'sample.input'
+       network: 'sample.input'
+       network_card: 'sample.input'
