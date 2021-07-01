@@ -1,4 +1,4 @@
 127.0.0.1 ansible_connection=local 
 
-[all:vars]
+[localhost:vars]
 vcenter={'server': 'sample.input', 'username': 'sample.input', 'password': 'sample.input', 'datacenter': 'sample.input', 'datastore': 'sample.input', 'host': 'sample.input', 'folder': 'sample.input', 'network': 'sample.input', 'network_card': 'sample.input'}
