@@ -12,6 +12,9 @@ config:
 down:
 	$(call venv_exec,.venv,$(_VM) suspend)
 
+lint:
+	$(call venv_exec,.venv,ansible-lint .)
+
 login:
 	$(call venv_exec,.venv,$(_VM) ssh)
 
