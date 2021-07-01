@@ -3,7 +3,7 @@
   ansible.builtin.command:
   args:
     cmd: "packer build -force -var-file vcenter.pkr.hcl -var-file variables.pkr.hcl build.pkr.hcl"
-    chdir: "./{{ ansible_user }}/{{ item.name }}"
+    chdir: "/home/{{ ansible_user }}/{{ item.name }}"
   loop: "{{ packer_builds }}"
   tags:
     - packer_build
@@ -11,7 +11,7 @@
 
 - name: Copy artifacts to local
   ansible.posix.synchronize:
-    src: "./{{ ansible_user }}/{{ item.name }}"
+    src: "/home/{{ ansible_user }}/{{ item.name }}"
     dest: "../artifacts/"
     mode: pull
     rsync_opts:
