@@ -8,4 +8,3 @@
   tasks:
   - name: Test role as a playbook
     import_tasks: tasks/main.yaml
-    become: true
