@@ -29,11 +29,11 @@ jobs:
       - name: Install pip requirements
         run: pip install -r requirements.txt
 
-      - name: Execute ansible-lint
-        run: make lint
-
       - name: Initialise roles
         run: make roles_init
+      
+      - name: Execute ansible-lint
+        run: make lint
       
       - name: Run playbook
         run: ansible-playbook -i inventories/github -t packer_prerequisites playbook.yaml
