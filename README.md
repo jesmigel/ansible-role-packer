@@ -17,7 +17,7 @@ An ansible role for building vm templates using packer
 | `build_paths` | Packer sub directories |
 | `http_files` | [Http server serving preseed related files](https://www.packer.io/docs/builders/vmware/iso#http-directory-configuration) |
 | `vcenter` | [Object](./defaults/main.yaml#L10) containing vcenter details |
-| `packer_builds` | [Object](./vars/main.yaml#L2) |
+| `packer_builds` | [Packer payload](./vars/main.yaml#L2) containing details necessary for building a target ISO. |
 | | |
 
 ### ToDo

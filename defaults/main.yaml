@@ -5,6 +5,7 @@ build_paths:
 
 http_files:
   - meta-data
+  - user-data
 
 vcenter:
   server: ''
