@@ -8,12 +8,12 @@ http_files:
   - user-data
 
 vcenter:
-  server: ''
-  username: ''
-  password: ''
-  datacenter: ''
-  datastore: ''
-  host: ''
-  folder: ''
-  network: ''
-  network_card: ''
+  server: 'sample.data'
+  username: 'sample.data'
+  password: 'sample.data'
+  datacenter: 'sample.data'
+  datastore: 'sample.data'
+  host: 'sample.data'
+  folder: 'sample.data'
+  network: 'sample.data'
+  network_card: 'sample.data'
