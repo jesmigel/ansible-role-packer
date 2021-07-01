@@ -85,6 +85,12 @@
   - packer_prerequisites
   - packer_payload_build
 
+- name: 'test'
+  ansible.builtin.debug:
+    var: vcenter
+  tags:
+  - ffs
+
 # Packer validate files
 - name: Validate builds
   ansible.builtin.command:

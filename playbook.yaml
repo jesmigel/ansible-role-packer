@@ -1,7 +1,6 @@
 ---
 - hosts: all
   vars_files:
-  - ./defaults/main.yaml
   - ./vars/main.yaml
   roles:
   - {role: hashicorp, become: true, tags: hashicorp}

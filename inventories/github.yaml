@@ -3,12 +3,12 @@ all:
     127.0.0.1:
       ansible_connection: local
       vcenter:
-        server: 'sample.data'
-        username: 'sample.data'
-        password: 'sample.data'
-        datacenter: 'sample.data'
-        datastore: 'sample.data'
-        host: 'sample.data'
-        folder: 'sample.data'
-        network: 'sample.data'
-        network_card: 'sample.data'
+        server: sampledata
+        username: sampledata
+        password: sampledata
+        datacenter: sampledata
+        datastore: sampledata
+        host: sampledata
+        folder: sampledata
+        network: sampledata
+        network_card: sampledata
