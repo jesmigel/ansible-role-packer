@@ -214,7 +214,7 @@ variable "ssh_password" {
   sensitive = true
 }
 
-variable "shell_scripts" {
+variable "scripts" {
   type = list(string)
   description = "A list of scripts."
   default = []
@@ -299,7 +299,7 @@ build {
   ]
   provisioner "shell" {
     execute_command = var.execute_command
-    scripts = var.shell_scripts
+    scripts = var.scripts
     expect_disconnect = true
   }
  }

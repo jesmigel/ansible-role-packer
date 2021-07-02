@@ -29,4 +29,4 @@ packer_builds:
       "<enter>"
     ]
     execute_command: "echo 'ubuntu' | {{'{% raw %}{{ .Vars }}{% endraw %}'}} sudo -S -E bash '{{'{% raw %}{{ .Path }}{% endraw %}'}}'"
-    shell_scripts: "scripts/provisioner.sh"
+    scripts: ["provisioner.sh"]

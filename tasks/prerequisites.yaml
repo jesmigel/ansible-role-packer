@@ -8,11 +8,11 @@
     mode: '0774'
     recurse: true
   with_nested:
-  - "{{ packer_builds }}"
-  - "{{ build_paths }}"
+    - "{{ packer_builds }}"
+    - "{{ build_paths }}"
   tags:
-  - packer_prerequisites
-  - packer_payload_directory
+    - packer_prerequisites
+    - packer_payload_directory
 
 # Http files: Metadata
 - name: Create empty meta-data file
@@ -22,20 +22,22 @@
     state: touch
   loop: "{{ packer_builds }}"
   tags:
-  - packer_prerequisites
-  - packer_payload_metadata
+    - packer_prerequisites
+    - packer_payload_metadata
 
 # Scripts
 - name: Copy payload specific build scripts
   ansible.builtin.copy:
-    src: "{{ item.name }}/provisioner.sh"
-    dest: "/home/{{ ansible_user }}/{{ item.name }}/scripts/provisioner.sh"
+    src: "{{ item.0.name }}/{{ item.1 }}"
+    dest: "/home/{{ ansible_user }}/{{ item.0.name }}/scripts/{{ item.1 }}"
     owner: "{{ ansible_user }}"
     mode: '755'
-  loop: "{{ packer_builds }}"
+  with_subelements:
+    - "{{ packer_builds }}"
+    - vars.scripts
   tags:
-  - packer_prerequisites
-  - packer_payload_build_scripts
+    - packer_prerequisites
+    - packer_payload_build_scripts
 
 # Packer: vcenter
 - name: Generate payload specific packer vcenter file
@@ -46,8 +48,8 @@
     mode: '755'
   loop: "{{ packer_builds }}"
   tags:
-  - packer_prerequisites
-  - packer_payload_vars
+    - packer_prerequisites
+    - packer_payload_vars
 
 # Packer: vars
 - name: Generate payload specific packer vars file
@@ -58,8 +60,8 @@
     mode: '755'
   loop: "{{ packer_builds }}"
   tags:
-  - packer_prerequisites
-  - packer_payload_vars
+    - packer_prerequisites
+    - packer_payload_vars
 
 # Packer: user-data
 - name: Generate payload specific packer http user-data file
@@ -70,8 +72,8 @@
     mode: '755'
   loop: "{{ packer_builds }}"
   tags:
-  - packer_prerequisites
-  - packer_payload_userdata
+    - packer_prerequisites
+    - packer_payload_userdata
 
 # Packer: build paylod
 - name: Generate payload specific packer build.pkr.hcl file
@@ -82,8 +84,8 @@
     mode: '655'
   loop: "{{ packer_builds }}"
   tags:
-  - packer_prerequisites
-  - packer_payload_build
+    - packer_prerequisites
+    - packer_payload_build
 
 # Packer validate files
 - name: Validate builds
@@ -93,5 +95,5 @@
     chdir: "/home/{{ ansible_user }}/{{ item.name }}"
   loop: "{{ packer_builds }}"
   tags:
-  - packer_prerequisites
-  - packer_payload_validation
+    - packer_prerequisites
+    - packer_payload_validation
