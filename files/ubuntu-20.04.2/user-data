@@ -14,6 +14,8 @@ autoinstall:
   ssh:
     install-server: true
     allow-pw: true
+    authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDhwtE1YM1Cqh/n3sDBfAX7DLUqk40p4WqtUbjwdl1e9wHJkf+PucKM8v2vYinl/WadKQZTAJse5RYe2vTDQQJlQZpRZP5CN+o+yGdmW/RoNqwSrGAVaP7FBx9/mTc7zx9M1IAB60Q/qR2JcJNmBmAg33LuvYfL8BxUcK5zdjajAp1RjxSnvhwAQMsMVxpOyKfZdkVXKE9U3AqDZcS43bMFIAt6V/jCwVukRbno3zOoudItdz5DHlEuwdzFqsskp0yGTyEtVHnuBIZRNvgCIl29tUbwdI2inlivvQ76Dhblwhe1Q/xIgVWs9WNlMEmujTff40McgURwtG2/138o/gWOkHCqltw4Ocosd60ElZr0jGJm6Wk40JRcvDS8+iklYQIdgXTHtGCtsy8hDAM6TCnLuxMxbu8pkJ8r12KgS2TAiO+ChvV68F3Ntl1U/IOx2iKrdus1Dzk+8cFYdNM4xB7+zQUefGTCYrKW8Qc6NwSAEwJrOUH8BanQZmhAFTnqCEE=
   storage:
     layout:
       name: direct
