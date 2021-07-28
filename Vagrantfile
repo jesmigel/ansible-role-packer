@@ -58,7 +58,7 @@ Vagrant.configure('2') do |config|
       esxi.guest_numvcpus = payload['vm']['vcpu']
   
       #  OPTIONAL. Specify a disk type.
-      esxi.guest_disk_type = 'thick'
+      esxi.guest_disk_type = 'thin'
   
       #  OPTIONAL. Boot disk size.
       esxi.guest_boot_disk_size = payload['vm']['disk']
