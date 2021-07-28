@@ -1,5 +1,4 @@
 #!/bin/bash
-
 echo '> Cleaning all audit logs ...'
 if [ -f /var/log/audit/audit.log ]; then
 cat /dev/null > /var/log/audit/audit.log
@@ -11,8 +10,8 @@ if [ -f /var/log/lastlog ]; then
 cat /dev/null > /var/log/lastlog
 fi
 # Cleans SSH keys.
-echo '> Cleaning SSH keys ...'
-rm -f /etc/ssh/ssh_host_*
+# echo '> Cleaning SSH keys ...'
+# rm -f /etc/ssh/ssh_host_*
 # Sets hostname to localhost.
 echo '> Setting hostname to localhost ...'
 cat /dev/null > /etc/hostname
@@ -21,7 +20,9 @@ hostnamectl set-hostname localhost
 echo '> Cleaning apt-get ...'
 apt-get clean
 # Cleans the machine-id.
-echo '> Cleaning the machine-id ...'
-truncate -s 0 /etc/machine-id
-rm /var/lib/dbus/machine-id
-ln -s /etc/machine-id /var/lib/dbus/machine-id
+# echo '> Cleaning the machine-id ...'
+# truncate -s 0 /etc/machine-id
+# rm /var/lib/dbus/machine-id
+# ln -s /etc/machine-id /var/lib/dbus/machine-id
+# Tell vmware tools to use cloud-init
+echo "disable_vmware_customization: false" >> /etc/cloud/cloud.cfg
