@@ -30,5 +30,5 @@ packer_builds:
     ]
     execute_command: "echo 'ubuntu' | {{'{% raw %}{{ .Vars }}{% endraw %}'}} sudo -S -E bash '{{'{% raw %}{{ .Path }}{% endraw %}'}}'"
     scripts:
-      - "cloud-init.sh"
-      - "clean-up.sh"
+    - "cloud-init.sh"
+    - "clean-up.sh"
