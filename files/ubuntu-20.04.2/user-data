@@ -23,6 +23,11 @@ autoinstall:
     primary:
       - arches: [i386, amd64]
         uri: "http://ro.archive.ubuntu.com/ubuntu/"
+  packages:
+    - open-vm-tools
+    - curl
+    - python3-pip
+    - cloud-init
   user-data:
     disable_root: false
   late-commands:
@@ -30,5 +35,5 @@ autoinstall:
     - sed -i -e 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g' /target/etc/ssh/sshd_config
     - echo 'ubuntu ALL=(ALL) NOPASSWD:ALL' > /target/etc/sudoers.d/ubuntu
     - curtin in-target --target=/target -- chmod 440 /etc/sudoers.d/ubuntu
-    - curtin in-target --target=/target -- apt-get update
+    - curtin in-target --target=/target -- apt-get update -y
     - curtin in-target --target=/target -- apt-get upgrade --yes

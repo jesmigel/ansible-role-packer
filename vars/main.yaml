@@ -29,4 +29,6 @@ packer_builds:
       "<enter>"
     ]
     execute_command: "echo 'ubuntu' | {{'{% raw %}{{ .Vars }}{% endraw %}'}} sudo -S -E bash '{{'{% raw %}{{ .Path }}{% endraw %}'}}'"
-    scripts: ["provisioner.sh"]
+    scripts:
+      - "cloud-init.sh"
+      - "clean-up.sh"

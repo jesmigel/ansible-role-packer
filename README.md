@@ -20,5 +20,6 @@ An ansible role for building vm templates using packer
 | `packer_builds` | [Packer payload](./vars/main.yaml#L2) containing details necessary for building a target ISO. |
 | | |
 
-### ToDo
+### References
+- https://beryju.org/blog/automating-ubuntu-server-20-04-with-packer
 - Variable structure breakdown
