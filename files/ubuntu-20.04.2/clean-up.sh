@@ -27,7 +27,10 @@ apt-get clean
 # This is the equivalent of the SID in Windows
 # Netplan also uses this as DHCP Identifier, causing multiple VMs from the same Image
 # to get the same IP Address
-rm -f /etc/machine-id
+# rm -f /etc/machine-id
+truncate -s 0 /etc/machine-id
+rm /var/lib/dbus/machine-id
+ln -s /etc/machine-id /var/lib/dbus/machine-id
 
 # Reset Cloud-init state (https://stackoverflow.com/questions/57564641/openstack-Packer-cloud-init)
 # systemctl stop cloud-init
